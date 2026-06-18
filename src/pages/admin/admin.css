@@ -1,0 +1,51 @@
+/* Admin-area specific styles (dashboard stats, quick actions). */
+
+/* Stat cards */
+.ad-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+.ad-stat { background: white; border: 1px solid var(--border); border-radius: 16px; padding: 24px 22px; box-shadow: var(--shadow-sm); position: relative; overflow: hidden; transition: transform 0.2s, box-shadow 0.2s; }
+.ad-stat:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+.ad-stat::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; }
+.ad-stat.c1::after { background: var(--green-dark); }
+.ad-stat.c2::after { background: #3b82f6; }
+.ad-stat.c3::after { background: #f59e0b; }
+.ad-stat.c4::after { background: #ef4444; }
+.ad-stat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 18px; }
+.ad-stat.c1 .ad-stat-icon { background: var(--green-xpale); }
+.ad-stat.c2 .ad-stat-icon { background: #eff6ff; }
+.ad-stat.c3 .ad-stat-icon { background: #fffbeb; }
+.ad-stat.c4 .ad-stat-icon { background: #fef2f2; }
+.ad-stat-num { font-family: 'Playfair Display', serif; font-size: 38px; font-weight: 700; color: var(--text-dark); line-height: 1; margin-bottom: 4px; }
+.ad-stat-label { font-size: 12.5px; color: var(--text-muted); }
+
+/* Two-column main grid */
+.ad-grid { display: grid; grid-template-columns: 1fr 320px; gap: 20px; }
+
+/* Quick action tiles */
+.ad-actions { display: grid; grid-template-columns: 1fr 1fr; }
+.ad-action { display: flex; align-items: center; gap: 14px; padding: 20px 22px; text-decoration: none; border-bottom: 1px solid var(--border); border-right: 1px solid var(--border); transition: background 0.15s; }
+.ad-action:nth-child(2n) { border-right: none; }
+.ad-action:nth-last-child(-n+2) { border-bottom: none; }
+.ad-action:hover { background: var(--cream); }
+.ad-action-icon { width: 42px; height: 42px; border-radius: 11px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; background: var(--green-xpale); }
+.ad-action-title { font-size: 13.5px; font-weight: 600; color: var(--text-dark); margin-bottom: 2px; }
+.ad-action-desc { font-size: 12px; color: var(--text-muted); }
+
+/* System status list */
+.ad-status { display: flex; align-items: center; gap: 14px; padding: 14px 24px; border-bottom: 1px solid var(--border); }
+.ad-status:last-child { border-bottom: none; }
+.ad-status-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.ad-status-dot.green { background: #10b981; box-shadow: 0 0 0 3px #ecfdf5; }
+.ad-status-dot.amber { background: #f59e0b; box-shadow: 0 0 0 3px #fffbeb; }
+.ad-status-label { font-size: 13px; font-weight: 500; color: var(--text-dark); flex: 1; }
+.ad-status-val { font-size: 12px; color: var(--text-muted); }
+
+/* Page header with an action button on the right */
+.ad-page-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 24px; gap: 16px; flex-wrap: wrap; }
+
+/* Checkbox group (doctor availability days) */
+.ad-days { display: flex; flex-wrap: wrap; gap: 8px; }
+.ad-day { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border: 1.5px solid var(--border); border-radius: 8px; font-size: 13px; cursor: pointer; background: var(--cream); transition: all 0.15s; user-select: none; }
+.ad-day.checked { background: var(--green-pale); border-color: var(--green-mid); color: var(--green-dark); font-weight: 500; }
+.ad-day input { display: none; }
+
+@media (max-width: 900px) { .ad-stats { grid-template-columns: repeat(2, 1fr); } .ad-grid { grid-template-columns: 1fr; } }
