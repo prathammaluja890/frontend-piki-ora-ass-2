@@ -1,8 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
-// Wraps any route that needs a logged-in user. If a `role` is given we also
-// check the user is allowed in, otherwise we bounce them somewhere sensible.
+
 export default function ProtectedRoute({ role, children }) {
   const { user } = useAuth();
 

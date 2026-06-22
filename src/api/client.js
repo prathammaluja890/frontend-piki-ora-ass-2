@@ -1,13 +1,11 @@
 import axios from 'axios';
 
-// A single pre-configured Axios instance that every page imports. Keeping the
-// base URL and auth header in one place means we never repeat ourselves.
+
 const client = axios.create({
   baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000/api',
 });
 
-// Before each request goes out, attach the saved token (if the user is logged
-// in). DRF expects the format:  Authorization: Token <key>
+
 client.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
   if (token) {
