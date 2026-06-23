@@ -86,19 +86,7 @@ export default function AdminDashboard() {
               </div>
 
               {/* System status */}
-              <div className="panel">
-                <div className="panel-header"><span className="panel-title">System Status</span></div>
-                <div>
-                  <div className="ad-status"><div className="ad-status-dot green"></div><span className="ad-status-label">Database</span><span className="ad-status-val">Operational</span></div>
-                  <div className="ad-status"><div className="ad-status-dot green"></div><span className="ad-status-label">Booking Engine</span><span className="ad-status-val">Online</span></div>
-                  <div className="ad-status"><div className="ad-status-dot green"></div><span className="ad-status-label">Authentication</span><span className="ad-status-val">Secure</span></div>
-                  <div className="ad-status">
-                    <div className={`ad-status-dot ${(stats?.pending ?? 0) > 5 ? 'amber' : 'green'}`}></div>
-                    <span className="ad-status-label">Pending Queue</span>
-                    <span className="ad-status-val">{stats?.pending ?? 0} pending</span>
-                  </div>
-                </div>
-              </div>
+            
             </div>
           </>
         )}

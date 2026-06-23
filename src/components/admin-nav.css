@@ -1,0 +1,136 @@
+/* =========================================
+   ADMIN NAVBAR STYLES (admin-nav.css)
+   ========================================= */
+
+.an-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #343a40; /* Standard Dark Admin Theme */
+  color: white;
+  padding: 10px 25px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.an-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.an-brand {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  letter-spacing: 0.5px;
+}
+
+.an-brand:hover {
+  color: #f8f9fa;
+}
+
+.an-links {
+  display: flex;
+  gap: 5px;
+}
+
+.an-links a {
+  color: #adb5bd;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.an-links a:hover {
+  background-color: #495057;
+  color: white;
+}
+
+/* React Router automatically applies the 'active' class to the current NavLink */
+.an-links a.active {
+  background-color: #007bff; /* Standard active blue */
+  color: white;
+}
+
+/* The '+ Add Doctor' link specifically */
+.an-add-btn {
+  color: #28a745 !important;
+}
+
+.an-add-btn:hover {
+  background-color: rgba(40, 167, 69, 0.1) !important;
+}
+
+.an-add-btn.active {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+.an-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.an-welcome {
+  font-size: 14px;
+  color: #e9ecef;
+}
+
+.an-welcome strong {
+  color: white;
+}
+
+.an-logout-btn {
+  background-color: #dc3545; /* Standard Danger Red */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.an-logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .an-navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+  
+  .an-nav-left {
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .an-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .an-nav-right {
+    width: 100%;
+    justify-content: space-between;
+    border-top: 1px solid #495057;
+    padding-top: 15px;
+  }
+}

@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import './admin-nav.css'; // Import the new separated CSS
 
-// Top navigation shown on every admin screen.
 export default function AdminNav() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -12,24 +12,31 @@ export default function AdminNav() {
   }
 
   return (
-    <nav className="topnav">
-      <div className="topnav-left">
-        <NavLink to="/admin" className="topnav-logo">
-          <span className="topnav-dot"></span>
-          Piki Ora
+    <nav className="an-navbar">
+      
+      <div className="an-nav-left">
+        <NavLink to="/admin" className="an-brand">
+        Piki Ora
         </NavLink>
-        <div className="topnav-links">
+        
+        <div className="an-links">
           <NavLink to="/admin" end>Dashboard</NavLink>
           <NavLink to="/admin/doctors">Doctors</NavLink>
           <NavLink to="/admin/patients">Patients</NavLink>
           <NavLink to="/admin/appointments">Appointments</NavLink>
-          <NavLink to="/admin/doctors/add">+ Add Doctor</NavLink>
+          <NavLink to="/admin/doctors/add" className="an-add-btn">+ Add Doctor</NavLink>
         </div>
       </div>
-      <div className="topnav-right">
-        <span className="topnav-welcome">Welcome, <strong>{user?.first_name}</strong></span>
-        <button className="btn-logout" onClick={handleLogout}>Log Out</button>
+
+      <div className="an-nav-right">
+        <span className="an-welcome">
+          Welcome, <strong>{user?.first_name || 'Admin'}</strong>
+        </span>
+        <button className="an-logout-btn" onClick={handleLogout}>
+          Log Out
+        </button>
       </div>
+      
     </nav>
   );
 }

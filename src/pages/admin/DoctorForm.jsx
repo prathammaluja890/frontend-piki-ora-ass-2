@@ -268,7 +268,7 @@ export default function DoctorForm() {
                   )}
 
                   <button type="button" className="df-btn df-btn-generate" onClick={generateSlots}>
-                    ⚙️ Generate
+                   Generate
                   </button>
                 </div>
               </div>
@@ -297,7 +297,7 @@ export default function DoctorForm() {
                 </div>
                 
                 <button type="button" className="df-btn df-btn-add" onClick={addSlot}>
-                  ➕ Add Manual Slot
+                   Add Manual Slot
                 </button>
               </div>
 
